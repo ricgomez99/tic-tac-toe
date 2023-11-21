@@ -1,5 +1,8 @@
 import Square from "../src/components/Square";
 import { useState } from "react";
+import Message from "./components/Message";
+import { isBoardFull } from "./utils.js";
+import Button from "./components/Button/index.jsx";
 
 // Symbols
 const TURNS = {
@@ -25,7 +28,7 @@ function App() {
 
   const updateBoard = (index) => {
     // If the position already has a value
-    // We won't overwrite it OR if there's a winner
+    // We won't overwrite it OR if there's a winner the game will stop
     if (board[index] || winner) return;
     // Update the Board
     const newBoard = [...board];
@@ -39,7 +42,9 @@ function App() {
     const newWinner = winnerCheck(newBoard);
     if (newWinner) {
       setWinner(newWinner);
-    }
+    } else if (isBoardFull(newBoard)) {
+      setWinner(false);
+    } // TODO Check if there's no winner -> reset game
   };
 
   const winnerCheck = (boardToCheck) => {
@@ -57,14 +62,20 @@ function App() {
     return null;
   };
 
+  const resetState = () => {
+    setBoard(Array(9).fill(null));
+    setTurn(TURNS.x);
+    setWinner(null);
+  };
+
   return (
     <main className="board">
       <h1>TIC-TAC-TOE</h1>
       <section className="game">
         {board &&
-          board.map((_, index) => (
+          board.map((square, index) => (
             <Square key={index} index={index} updateBoard={updateBoard}>
-              <span className="cell__content">{board[index]}</span>
+              <span className="cell__content">{square}</span>
             </Square>
           ))}
       </section>
@@ -72,6 +83,16 @@ function App() {
         <Square isSelected={turn === TURNS.x}>{TURNS.x}</Square>
         <Square isSelected={turn === TURNS.o}>{TURNS.o}</Square>
       </section>
+      {winner !== null && (
+        <section className="winner">
+          <Message winner={winner}>
+            {winner && <Square>{winner}</Square>}
+          </Message>
+          <footer>
+            <Button reset={resetState} />
+          </footer>
+        </section>
+      )}
     </main>
   );
 }
