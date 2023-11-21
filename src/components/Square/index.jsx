@@ -11,3 +11,9 @@ export default function Square({ children, index, updateBoard, isSelected }) {
     </div>
   );
 }
+
+export const makeMove = (board, index, player) => {
+  const newBoard = [...board];
+  newBoard[index] = player;
+  return newBoard;
+};
