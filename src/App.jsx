@@ -49,14 +49,7 @@ function App() {
     const newTurn = turn === TURNS.x ? TURNS.o : TURNS.x;
     setTurn(newTurn);
 
-    // Checks for a winner
-    const newWinner = winnerCheck(newBoard);
-    if (newWinner) {
-      setWinner(newWinner);
-      return;
-    } else if (isBoardFull(newBoard)) {
-      setWinner(false);
-    } else if (newTurn === TURNS.x) {
+    if (newTurn === TURNS.x) {
       // Only make the CPU move if it's the CPU's turn
       const bestMove = getBestMove(newBoard);
       newBoard[bestMove] = TURNS.x;
@@ -65,6 +58,16 @@ function App() {
       // Update the turn after the CPU makes a move
       setTurn(TURNS.o);
     }
+
+    // Checks for a winner
+    const newWinner = winnerCheck(newBoard);
+
+    if (!!newWinner) {
+      setWinner(newWinner);
+      return;
+    }
+
+    isBoardFull(newBoard) ? setWinner(false) : setWinner(null);
   };
 
   const getMaxEval = (boartToEvalueate, depth) => {
@@ -146,7 +149,7 @@ function App() {
 
   const resetState = () => {
     setBoard(Array(9).fill(null));
-    setTurn(TURNS.x);
+    setTurn(TURNS.o);
     setWinner(null);
   };
 
