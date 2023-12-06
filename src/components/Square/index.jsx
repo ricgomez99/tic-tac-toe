@@ -6,8 +6,8 @@ export default function Square({ children, index, updateBoard, isSelected }) {
   };
 
   return (
-    <div onClick={handleClick} className={squareClass} key={index}>
+    <button onClick={handleClick} className={squareClass} key={index}>
       {children}
-    </div>
+    </button>
   );
 }
