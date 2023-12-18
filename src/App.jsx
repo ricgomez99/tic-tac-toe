@@ -2,7 +2,7 @@ import GameBoard from "./components/GameBoard";
 
 function App() {
   return (
-    <main className="board">
+    <main data-testid="app" className="board">
       <GameBoard />
     </main>
   );

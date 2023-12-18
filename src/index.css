@@ -44,19 +44,20 @@ body {
 
 .board button {
   padding: 8px 12px;
-  background: transparent;
-  border: 2px solid #eee;
-  color: #eee;
+  background: #bbbbbb;
+  border: 2px solid #bbbbbb;
+  color: #937dc2;
   width: 100px;
-  border-radius: 5px;
+  border-radius: 10px;
   transition: 0.5s ease-in-out;
   font-weight: bold;
   cursor: pointer;
 }
 
 .board button:hover {
-  background: #eee;
-  color: #222;
+  background: #797a7e;
+  border: 2px solid #797a7e;
+  color: #eee;
 }
 
 .board .game {
@@ -72,6 +73,7 @@ body {
   width: fit-content;
   position: relative;
   border-radius: 10px;
+  gap: 10px;
 }
 
 .turn .square,
@@ -83,8 +85,8 @@ body {
 }
 
 .square.is-selected {
-  color: #fff;
-  background: #09f;
+  color: #eee;
+  background: #937dc2;
 }
 
 .winner {
@@ -93,22 +95,34 @@ body {
   height: 100vh;
   top: 0;
   left: 0;
-  display: grid;
-  place-items: center;
-  background-color: rgba(0, 0, 0, 0.7);
-}
-
-.winner .text {
-  background: #111;
-  height: 300px;
-  width: 320px;
-  border: 2px solid #eee;
-  border-radius: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.winner .text {
+  font-weight: 700;
+  height: 80px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.text {
+  background: rgba(225, 223, 223, 0.28);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8.1px);
+  -webkit-backdrop-filter: blur(8.1px);
+  border: 1px solid rgba(255, 255, 255, 0.27);
+  color: #937dc2;
+  font-size: 24px;
 }
 
 .winner .win {
