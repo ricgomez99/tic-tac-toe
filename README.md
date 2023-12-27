@@ -6,16 +6,20 @@
 + Incorporates the minimax algorithm for an enhanced and challenging gaming experience.
 ### How to Play
 1. Clone the repository:
-````js
+```js
 git clone [repository_url]
+
 ```
 2. Install Dependencies:
 ```js
 npm install
+
 ```
 3. Start the Game:
 ```js
+
 npm run dev
+
 ```
 4. Access the game in your browser at http://localhost:3000.
 ### Gameplay:
