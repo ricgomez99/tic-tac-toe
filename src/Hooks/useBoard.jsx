@@ -1,10 +1,19 @@
 import { useState, useEffect } from "react";
 import { TURNS, WINNER_COMBINATIONS, isBoardFull, makeMove } from "../utils.js";
 import { MinMax } from "../lib/minimax.js";
+import { resetStorage, setStorage } from "../lib/localStorage/index.js";
 
 const useBoard = () => {
-  const [board, setBoard] = useState(Array(9).fill(null));
-  const [turn, setTurn] = useState(TURNS.x);
+  const [board, setBoard] = useState(() => {
+    const boardFromStorage = window.localStorage.getItem("board");
+    return boardFromStorage
+      ? JSON.parse(boardFromStorage)
+      : Array(9).fill(null);
+  });
+  const [turn, setTurn] = useState(() => {
+    const turnFromStorage = window.localStorage.getItem("turn");
+    return turnFromStorage ?? TURNS.x;
+  });
   const [winner, setWinner] = useState(null); // null: No winner, false: Draw
 
   useEffect(() => {
@@ -29,6 +38,9 @@ const useBoard = () => {
 
     const newTurn = turn === TURNS.x ? TURNS.o : TURNS.x;
     setTurn(newTurn);
+
+    // Adding localStorage
+    setStorage(newBoard, newTurn);
 
     if (newTurn === TURNS.x) {
       // Only make the CPU move if it's the CPU's turn
@@ -90,6 +102,8 @@ const useBoard = () => {
     setBoard(Array(9).fill(null));
     setTurn(TURNS.o);
     setWinner(null);
+
+    resetStorage("board", "turn");
   };
 
   return { board, turn, winner, updateBoard, resetState };
