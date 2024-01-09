@@ -22,6 +22,8 @@ npm run dev
 
 ```
 4. Access the game in your browser at http://localhost:3000.
+
+5. You can play the game right away using this link: https://tic-tac-toe-cpu.netlify.app/
 ### Gameplay:
 + Click on the grid to place your move.
 + The game alternates between player X and player O.
