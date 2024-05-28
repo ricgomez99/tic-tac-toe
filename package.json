@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "test": "vitest",
     "coverage": "vitest run --coverage",
-    "eslint": "eslint './**/*.{js, jsx}'"
+    "eslint": "eslint . --ext .js --ext .jsx"
   },
   "dependencies": {
     "react": "^18.2.0",
