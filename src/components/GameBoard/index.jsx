@@ -1,10 +1,10 @@
-import { TURNS } from "../../utils.js";
-import Square from "../Square/index.jsx";
-import Winner from "../Winner/index.jsx";
-import useBoard from "../../Hooks/useBoard.jsx";
+import { TURNS } from '../../utils.js'
+import Square from '../Square/index.jsx'
+import Winner from '../Winner/index.jsx'
+import useBoard from '../../Hooks/useBoard.jsx'
 
 export default function GameBoard() {
-  const { board, resetState, turn, updateBoard, winner } = useBoard();
+  const { board, resetState, turn, updateBoard, winner } = useBoard()
   return (
     <>
       <h1>TIC-TAC-TOE</h1>
@@ -22,5 +22,5 @@ export default function GameBoard() {
       </section>
       {winner !== null && <Winner winner={winner} reset={resetState} />}
     </>
-  );
+  )
 }

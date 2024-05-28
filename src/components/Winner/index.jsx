@@ -1,6 +1,6 @@
-import Message from "../Message";
-import Square from "../Square";
-import Button from "../Button";
+import Message from '../Message'
+import Square from '../Square'
+import Button from '../Button'
 
 export default function Winner({ winner, reset }) {
   return (
@@ -10,5 +10,5 @@ export default function Winner({ winner, reset }) {
         <Button reset={reset} />
       </footer>
     </section>
-  );
+  )
 }
