@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy:
-    runs-on: windows-2022
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
         with:
@@ -16,7 +16,7 @@ jobs:
         with:
           node-version: 20
       - name: Install Dependencies
-        run: npm install --no-audit --no-fund --no-optional
+        run: npm install
       - name: Lint
         run: npm run eslint
       - name: Build
