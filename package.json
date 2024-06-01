@@ -36,7 +36,7 @@
   "esLintConfig": {
     "extends": "./node_modules/standard/eslintrc.cjs"
   },
-  "resolutions": {
-    "rollup": "npm:@rollup/wasm-node"
+  "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "4.6.1"
   }
 }

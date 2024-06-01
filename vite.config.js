@@ -9,8 +9,4 @@ export default defineConfig({
     globals: true,
     environment: 'happy-dom',
   },
-  esbuild: {
-    target: 'esnext',
-    platform: 'linux',
-  },
 })
