@@ -35,5 +35,8 @@
   },
   "esLintConfig": {
     "extends": "./node_modules/standard/eslintrc.cjs"
+  },
+  "resolutions": {
+    "rollup": "npm:@rollup/wasm-node"
   }
 }
