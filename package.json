@@ -10,7 +10,9 @@
     "preview": "vite preview",
     "test": "vitest",
     "coverage": "vitest run --coverage",
-    "eslint": "eslint . --ext .js --ext .jsx"
+    "eslint": "eslint . --ext .js --ext .jsx",
+    "start-test": "NODE_ENV=test node app.js",
+    "test:e2e": "npx cypress run"
   },
   "dependencies": {
     "react": "^18.2.0",
