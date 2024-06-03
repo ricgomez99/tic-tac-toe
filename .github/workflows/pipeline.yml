@@ -2,13 +2,20 @@ name: Deployment Pipeline
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
+
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize]
 
 jobs:
   deploy:
     runs-on: ubuntu-22.04
     steps:
+      - name: Cancel Previous Redundant Builds
+        uses: styfle/cancel-workflow-action@0.9.1
+        with:
+          access_token: ${{github.token}}
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
@@ -23,9 +30,12 @@ jobs:
         run: npm run build
       - name: Test
         run: npm test
-    #   - name: E2E Cypress Test - Needs to be fixed
-    #     uses: cypress-io/github-action@v6
-    #     with:
-    #       command: npm run test:e2e
-    #       start: npm run dev
-    #       wait-on: http://localhost:5173/
+        #   - name: E2E Cypress Test - Needs to be fixed
+        #     uses: cypress-io/github-action@v6
+        #     with:
+        #       command: npm run test:e2e
+        #       start: npm run dev
+        #       wait-on: http://localhost:5173/
+      - name: Deploy
+        if: ${{github.event_name == 'push'}}
+        run: echo Deployed
