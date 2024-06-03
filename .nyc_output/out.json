@@ -1,0 +1,146 @@
+{
+  "D:/tic-tac-toe/tic-tac-toe/src/App.css": {
+    "path": "D:/tic-tac-toe/tic-tac-toe/src/App.css",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "D:/tic-tac-toe/tic-tac-toe/src/App.jsx": {
+    "path": "D:/tic-tac-toe/tic-tac-toe/src/App.jsx",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "D:/tic-tac-toe/tic-tac-toe/src/index.css": {
+    "path": "D:/tic-tac-toe/tic-tac-toe/src/index.css",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "D:/tic-tac-toe/tic-tac-toe/src/main.jsx": {
+    "path": "D:/tic-tac-toe/tic-tac-toe/src/main.jsx",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "D:/tic-tac-toe/tic-tac-toe/src/utils.js": {
+    "path": "D:/tic-tac-toe/tic-tac-toe/src/utils.js",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "D:/tic-tac-toe/tic-tac-toe/src/assets/react.svg": {
+    "path": "D:/tic-tac-toe/tic-tac-toe/src/assets/react.svg",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "D:/tic-tac-toe/tic-tac-toe/src/Hooks/useBoard.jsx": {
+    "path": "D:/tic-tac-toe/tic-tac-toe/src/Hooks/useBoard.jsx",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "D:/tic-tac-toe/tic-tac-toe/src/lib/minimax.js": {
+    "path": "D:/tic-tac-toe/tic-tac-toe/src/lib/minimax.js",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "D:/tic-tac-toe/tic-tac-toe/src/test/App.test.jsx": {
+    "path": "D:/tic-tac-toe/tic-tac-toe/src/test/App.test.jsx",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "D:/tic-tac-toe/tic-tac-toe/src/test/minimax.test.js": {
+    "path": "D:/tic-tac-toe/tic-tac-toe/src/test/minimax.test.js",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "D:/tic-tac-toe/tic-tac-toe/src/components/Button/index.jsx": {
+    "path": "D:/tic-tac-toe/tic-tac-toe/src/components/Button/index.jsx",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "D:/tic-tac-toe/tic-tac-toe/src/components/GameBoard/index.jsx": {
+    "path": "D:/tic-tac-toe/tic-tac-toe/src/components/GameBoard/index.jsx",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "D:/tic-tac-toe/tic-tac-toe/src/components/Message/index.jsx": {
+    "path": "D:/tic-tac-toe/tic-tac-toe/src/components/Message/index.jsx",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "D:/tic-tac-toe/tic-tac-toe/src/components/Square/index.jsx": {
+    "path": "D:/tic-tac-toe/tic-tac-toe/src/components/Square/index.jsx",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "D:/tic-tac-toe/tic-tac-toe/src/components/Winner/index.jsx": {
+    "path": "D:/tic-tac-toe/tic-tac-toe/src/components/Winner/index.jsx",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "D:/tic-tac-toe/tic-tac-toe/src/lib/localStorage/index.js": {
+    "path": "D:/tic-tac-toe/tic-tac-toe/src/lib/localStorage/index.js",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  }
+}
