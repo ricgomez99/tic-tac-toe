@@ -11,7 +11,7 @@ on:
 jobs:
   deploy:
     permissions:
-      pull-requests: write
+      deployments: write
     runs-on: ubuntu-22.04
     steps:
       - name: Cancel Previous Redundant Builds
@@ -54,13 +54,13 @@ jobs:
             > deploy_output.json
       - name: URL Preview
         id: url_preview
-        if: ${{github.event_name != 'push'}}
+        if: ${{github.event_name == 'push'}}
         run: |
           NETLIFY_PREVIEW_URL=$(jq -r '.deploy_url' deploy_output.json)
           echo "NETLIFY_PREVIEW_URL=$NETLIFY_PREVIEW_URL" >> "GITHUB_OUTPUT"
       - name: Write Preview URL
         uses: actions/github-script@v7
-        if: ${{github.event_name != 'push'}}
+        if: ${{github.event_name == 'push'}}
         env:
           NETLIFY_PREVIEW_URL: ${{steps.url_preview.outputs.NETLIFY_PREVIEW_URL}}
         with:
