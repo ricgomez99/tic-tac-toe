@@ -22,6 +22,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
+      - name: Install Netlify
+        run: npm install netlify-cli@17.25.0 -g
       - name: Install Dependencies
         run: npm ci
       - name: Lint
@@ -37,5 +39,10 @@ jobs:
         #       start: npm run dev
         #       wait-on: http://localhost:5173/
       - name: Deploy
+        id: netlify_deploy
         if: ${{github.event_name == 'push'}}
-        run: echo Deployed
+        run: |
+          netlify deploy \
+            --dir dist \
+            --site ${{ secrets.NETLIFY_SITE_ID }} \
+            --auth ${{ secrets.NETLIFY_API_TOKEN }}
