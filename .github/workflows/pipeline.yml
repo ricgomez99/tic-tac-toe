@@ -11,7 +11,7 @@ on:
 jobs:
   deploy:
     permissions:
-      deployments: write
+      pull-requests: write
     runs-on: ubuntu-22.04
     steps:
       - name: Cancel Previous Redundant Builds
