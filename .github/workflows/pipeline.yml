@@ -10,6 +10,8 @@ on:
 
 jobs:
   deploy:
+    permissions:
+      pull-requests: write
     runs-on: ubuntu-22.04
     steps:
       - name: Cancel Previous Redundant Builds
@@ -47,4 +49,41 @@ jobs:
             --dir dist \
             --site ${{ secrets.NETLIFY_SITE_ID }} \
             --auth ${{ secrets.NETLIFY_API_TOKEN }} \
-            $prod_flag
+            $prod_flag \
+            --json \
+            > deploy_output.json
+      - name: URL Preview
+        id: url_preview
+        if: ${{github.event_name != 'push'}}
+        run: |
+          NETLIFY_PREVIEW_URL=$(jq -r '.deploy_url' deploy_output.json)
+          echo "NETLIFY_PREVIEW_URL=$NETLIFY_PREVIEW_URL" >> "GITHUB_OUTPUT"
+      - name: Write Preview URL
+        uses: actions/github-script@v7
+        if: ${{github.event_name != 'push'}}
+        env:
+          NETLIFY_PREVIEW_URL: ${{steps.url_preview.outputs.NETLIFY_PREVIEW_URL}}
+        with:
+          script: |
+            async function comment() {
+                const result = await github.rest.repos.listPullRequestsAssociatedWithCommit({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    commit_sha: context.sha,
+                })
+
+                const issueNumber = result.data[0].number
+
+                if(!issueNumber) {
+                    console.log(`No PR found for commit ${context.sha}`)
+                }
+
+                await github.rest.issues.createComment({
+                    issue_number: issueNumber,
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    body: `Preview URL: ${process.env.NETLIFY_PREVIEW_URL}`
+                })
+            }
+
+            comment()
