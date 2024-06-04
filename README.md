@@ -1,5 +1,10 @@
 # Tic-Tac-Toe with React
 + This project is a classic Tic-Tac-Toe game built using React. It includes an advanced AI that employs the minimax algorithm to challenge players with strategic moves.
+
+[![Deployment Pipeline](https://github.com/ricgomez99/tic-tac-toe/actions/workflows/pipeline.yml/badge.svg)](https://github.com/ricgomez99/tic-tac-toe/actions/workflows/pipeline.yml)
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/0e0d775d-678c-4a51-b9b2-83d765e77d95/deploy-status)](https://app.netlify.com/sites/tic-tac-toe-cpu/deploys)
+
 ### Features
 + Play Tic-Tac-Toe against an intelligent AI.
 + Responsive design for seamless gameplay on various devices.
